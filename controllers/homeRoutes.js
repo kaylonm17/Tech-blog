@@ -1,17 +1,17 @@
 const router = require("express").Router();
 const sequelize = require("../config/connection");
-const { Trip, User, Comment } = require("../models/Index");
+const { Tech, User, Comment } = require("../models/Index");
 
-// GET all trips for homepage
+// GET all techs for homepage
 router.get("/", async (req, res) => {
   try {
-    const dbTripData = await Trip.findAll({
+    const dbtechData = await tech.findAll({
 
-      attributes: ["id", "location", "created_at", "trip_description"],
+      attributes: ["id", "location", "created_at", "tech_description"],
       include: [
         {
           model: Comment,
-          attributes: ['id','user_id','trip_id','comment_text','created_at'],
+          attributes: ['id','user_id','tech_id','comment_text','created_at'],
           include: {
             model: User,
             attributes: ['username']
@@ -24,13 +24,13 @@ router.get("/", async (req, res) => {
       ],
     });
 
-    const trips = dbTripData.map((trip) => trip.get({ plain: true }));
+    const techs = dbtechData.map((tech) => tech.get({ plain: true }));
 
     // ./views/homepage.handlebars ->
     // ./views/layouts/main.handlebars
 
     res.render('homepage', {
-      trips,
+      techs,
       loggedIn: req.session.loggedIn,
     });
   } catch (err) {
@@ -39,14 +39,14 @@ router.get("/", async (req, res) => {
   }
 });
 
-router.get('/trip/:id', (req, res) => {
-  Trip.findOne({
+router.get('/tech/:id', (req, res) => {
+  Tech.findOne({
     where: {id: req.params.id},
-    attributes: ['id', 'location', 'created_at', 'trip_description'],
+    attributes: ['id', 'location', 'created_at', 'tech_description'],
     include: [
       {
         model: Comment,
-        attributes: ["id", "comment_text", "trip_id", "user_id", "created_at"],
+        attributes: ["id", "comment_text", "tech_id", "user_id", "created_at"],
         include: {
           model: User,
           attributes: ['username']
@@ -58,17 +58,17 @@ router.get('/trip/:id', (req, res) => {
       }
     ]
   })
-  .then(dbTripData => {
-    if (!dbTripData) {
-      res.status(404).json({ message: 'No trip found with this id' });
+  .then(dbtechData => {
+    if (!dbtechData) {
+      res.status(404).json({ message: 'No tech found with this id' });
       return;
     }
 
     // serialize the data
-    const trip = dbTripData.get({ plain: true });
+    const tech = dbtechData.get({ plain: true });
 
     // pass data to template
-    res.render('single-trip', {trip, loggedIn: req.session.loggedIn});
+    res.render('single-tech', {tech, loggedIn: req.session.loggedIn});
   })
   .catch(err => {
     console.log(err);

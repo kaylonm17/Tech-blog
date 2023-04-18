@@ -1,16 +1,16 @@
 const router = require('express').Router();
 const commentRoutes = require('./commentRoutes');
-const tripRoutes = require('./tripRoutes');
+const techRoutes = require('./techRoutes');
 const userRoutes = require('./userRoutes');
-const addTripRoutes = require('./addTripRoutes')
+const addTechRoutes = require('./addTechRoutes')
 const dailyRoutes = require('./dailyRoutes');
-const tripDetailsRoutes = require('./tripDetailsRoutes');
+const techDetailsRoutes = require('./techDetailsRoutes');
 
 router.use('/comment', commentRoutes);
-router.use('/trip', tripRoutes);
+router.use('/tech', techRoutes);
 router.use('/users', userRoutes);
-// router.use('/add-trip', addTripRoutes); CAN DELETE
-router.use('/trip-details', tripDetailsRoutes);
+// router.use('/add-tech', addTechRoutes); CAN DELETE
+router.use('/tech-details', techDetailsRoutes);
 router.use('/add-daily-log', dailyRoutes);
 
 module.exports = router;

@@ -21,14 +21,14 @@ router.get('/:id', (req, res) => {
     where: {id: req.params.id},
     include: [
       {
-        model: Trip,
-        attributes: ['id', 'title', 'trip_description', 'created_at']
+        model: Tech,
+        attributes: ['id', 'title', 'tech_description', 'created_at']
       },
       {
         model: Comment,
         attributes: ['id', 'comment_text', 'created_at'],
         include: {
-          model: Trip,
+          model: Tech,
           attributes: ['title']
         }
       }

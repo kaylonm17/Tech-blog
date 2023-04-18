@@ -4,7 +4,7 @@ const sequelize = require('../config/connection');
 class Comment extends Model {}
 
 /* define "Comment" table:
-  [id, user_id, trip_id, comment_text]
+  [id, user_id, tech_id, comment_text]
 */
 Comment.init(
   {
@@ -22,11 +22,11 @@ Comment.init(
             key: 'id'
          }
       },
-      trip_id: {
+      tech_id: {
          type: DataTypes.INTEGER,
          allowNull: false,
          references: {
-            model: 'trip',
+            model: 'tech',
             key: 'id'
          }
       },

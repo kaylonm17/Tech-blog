@@ -1,8 +1,8 @@
 const router = require('express').Router();
-const { Daily, Trip } = require('../../models/Index');
+const { Daily, Tech } = require('../../models/Index');
 const withAuth = require('../../utils/auth');
 
-//Post new daily notes to the Trip Details page
+//Post new daily notes to the Tech Details page
 router.post('/', withAuth, async (req, res) => {
     try {
 
@@ -11,7 +11,7 @@ router.post('/', withAuth, async (req, res) => {
         places_visited: req.body.places_visited,
         daily_notes: req.body.daily_notes,
         user_id: req.session.user_id,
-        trip_id: req.body.trip_id,
+        tech_id: req.body.tech_id,
 
     });
     

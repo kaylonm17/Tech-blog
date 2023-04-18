@@ -16,7 +16,7 @@ router.post('/', withAuth, (req, res) => {
   if (req.session) {
     Comment.create({
       comment_text: req.body.comment_text,
-      trip_id: req.body.trip_id,
+      tech_id: req.body.tech_id,
       // use the id from the session
       user_id: req.session.user_id,
     })

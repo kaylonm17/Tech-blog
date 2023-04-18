@@ -23,10 +23,10 @@ Image.init(
       },
     },
 
-    trip_id: {
+    tech_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'trip',
+        model: 'tech',
         key: 'id',
       },
     },

@@ -21,7 +21,7 @@ Comment.belongsTo(User,{
 });
 
 Comment.belongsTo(Tech, {
-   foreignKey: 'trip_id'
+   foreignKey: 'tech_id'
  });
  
 User.hasMany(Tech,{
@@ -32,7 +32,7 @@ User.hasMany(Comment, {
    foreignKey: 'user_id'
 });
  
-Trip.hasMany(Comment, {
+tech.hasMany(Comment, {
    foreignKey: 'tech_id'
 });
 

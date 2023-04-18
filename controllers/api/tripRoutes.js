@@ -1,18 +1,18 @@
 const router = require('express').Router();
-const { Trip, User, Comment } = require('../../models/Index');
+const { Tech, User, Comment } = require('../../models/Index');
 const sequelize = require('../../config/connection');
 const withAuth = require('../../utils/auth');
 
 // get all users
 router.get('/', (req, res) => {
-  Trip.findAll({
-    attributes: ['id','title','created_at','trip_description'],
+  Tech.findAll({
+    attributes: ['id','title','created_at','tech_description'],
     order: [['created_at', 'DESC']],
     include: [
       // Comment model here -- attached username to comment
       {
         model: Comment,
-        attributes: ['id', 'comment_text', 'trip_id', 'user_id', 'created_at'],
+        attributes: ['id', 'comment_text', 'tech_id', 'user_id', 'created_at'],
         include: {
           model: User,
           attributes: ['username']
@@ -24,7 +24,7 @@ router.get('/', (req, res) => {
       },
     ]
   })
-  .then(dbTripData => res.json(dbTripData))
+  .then(dbTechData => res.json(dbTechData))
   .catch(err => {
     console.log(err);
     res.status(500).json(err);
@@ -32,9 +32,9 @@ router.get('/', (req, res) => {
 });
 
 router.get('/:id', (req, res) => {
-  Trip.findOne({
+  Tech.findOne({
     where: {id: req.params.id},
-    attributes: ['id','title','created_at','trip_description'],
+    attributes: ['id','title','created_at','tech_description'],
     include: [
       // include the Comment model here:
       {
@@ -43,7 +43,7 @@ router.get('/:id', (req, res) => {
       },
       {
         model: Comment,
-        attributes: ['id', 'comment_text', 'trip_id', 'user_id', 'created_at'],
+        attributes: ['id', 'comment_text', 'tech_id', 'user_id', 'created_at'],
         include: {
           model: User,
           attributes: ['username']
@@ -51,12 +51,12 @@ router.get('/:id', (req, res) => {
       }
     ]
   })
-  .then(dbTripData => {
-    if (!dbTripData) {
+  .then(dbTechData => {
+    if (!dbTechData) {
       res.status(404).json({ message: 'No post found with this id' });
       return;
     }
-    res.json(dbTripData);
+    res.json(dbTechData);
   })
   .catch(err => {
     console.log(err);
@@ -65,15 +65,15 @@ router.get('/:id', (req, res) => {
 });
 
 router.post('/', withAuth, (req, res) => {
-  Trip.create({
+  Tech.create({
     title: req.body.title,
     location: req.body.location,
     starting_date: req.body.starting_date,
     ending_date: req.body.ending_date,
-    trip_description: req.body.trip_description,
+    tech_description: req.body.tech_description,
     user_id: req.session.user_id
   })
-  .then(dbTripData => res.json(dbTripData))
+  .then(dbTechData => res.json(dbTechData))
   .catch(err => {
     console.log(err);
     res.status(500).json(err);
@@ -81,22 +81,22 @@ router.post('/', withAuth, (req, res) => {
 });
 
 router.put('/:id', withAuth, (req, res) => {
-  Trip.update({
+  Tech.update({
     title: req.body.title,
     location: req.body.location,
     starting_date: req.body.starting_date,
     ending_date: req.body.ending_date,
-    trip_description: req.body.trip_description,
+    tech_description: req.body.tech_description,
   },
   {
     where: {id: req.params.id}
   })
-  .then(dbTripData => {
-    if (!dbTripData) {
+  .then(dbTechData => {
+    if (!dbTechData) {
       res.status(404).json({ message: 'No post found with this id' });
       return;
     }
-    res.json(dbTripData);
+    res.json(dbTechData);
   })
   .catch(err => {
     console.log(err);
@@ -105,15 +105,15 @@ router.put('/:id', withAuth, (req, res) => {
 });
 
 router.delete('/:id', withAuth, (req, res) => {
-  Trip.destroy({
+  Tech.destroy({
     where: {id: req.params.id}
   })
-  .then(dbTripData => {
-    if (!dbTripData) {
+  .then(dbTechData => {
+    if (!dbTechData) {
       res.status(404).json({ message: 'No post found with this id' });
       return;
     }
-    res.json(dbTripData);
+    res.json(dbTechData);
   })
   .catch(err => {
     console.log(err);

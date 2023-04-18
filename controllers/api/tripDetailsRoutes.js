@@ -1,24 +1,24 @@
 const router = require("express").Router();
-const { Trip, Daily } = require("../../models/Index");
+const { Tech, Daily } = require("../../models/Index");
 const withAuth = require("../../utils/auth");
 
-// Get all Daily notes and post to the Trip Details page
+// Get all Daily notes and post to the Tech Details page
 router.get("/:id", withAuth, async (req, res) => {
   try {
     const dailyData = await Daily.findAll({
-      where: { trip_id: req.params.id },
+      where: { tech_id: req.params.id },
     });
 
-    const dbTrip = await Trip.findByPk(req.params.id);
-    const trip = dbTrip.get({ plain: true });
+    const dbTech = await Tech.findByPk(req.params.id);
+    const tech = dbTech.get({ plain: true });
 
     const dailies = dailyData.map((daily) => daily.get({ plain: true }));
     console.log(dailies);
-    console.log(trip);
+    console.log(tech);
 
-    res.render("trip-details", {
+    res.render("tech-details", {
       dailies,
-      trip,
+      tech,
       loggedIn: req.session.loggedIn,
     });
   } catch (err) {
@@ -27,16 +27,16 @@ router.get("/:id", withAuth, async (req, res) => {
   }
 });
 
-// Get trip id to associate daily note
+// Get tech id to associate daily note
 router.get("/:id/add-daily", withAuth, async (req, res) => {
   try {
-    const dbTrip = await Trip.findByPk(req.params.id);
-    const trip = dbTrip.get({ plain: true });
+    const dbTech = await Tech.findByPk(req.params.id);
+    const tech = dbTech.get({ plain: true });
 
-    console.log(trip);
+    console.log(tech);
 
     res.render("add-daily-info", {
-      trip,
+      tech,
       loggedIn: req.session.loggedIn,
     });
   } catch (err) {
