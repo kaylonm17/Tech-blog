@@ -4,7 +4,7 @@ const path = require("path");
 require("dotenv").config();
 const sequelize = require("../config/connection");
 const Image = require("../models/Image");
-const tech = require("../models/Tech");
+const Tech = require("../models/Tech");
 // Not sure if bodyparser is necessary or if it should be included here or in server.js
 // const bodyparser = require('body-parser')
 // app.use(bodyparser.json())

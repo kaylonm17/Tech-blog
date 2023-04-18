@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Daily, Tech } = require('../../models/Index');
+const { Daily, Tech } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 //Post new daily notes to the Tech Details page

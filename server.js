@@ -11,7 +11,7 @@ const bodyparser = require('body-parser')
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 // const { strict } = require('assert');
-const routes = require('./controllers');
+const routes = require('./controllers/Index');
 const sequelize = require('./config/connection');
 const helpers = require('./utils/helpers');
 

@@ -1,0 +1,407 @@
+:root {
+   --light_blue: #CDDAEB;
+   --dark_blue: #152A44;
+   --light_purple: #7C74FE;
+   --dark_purple: #660000;
+   --grey: #F2F1EC;
+   --white: #FFFFFF;
+   --border-radius: 0.3rem;
+ }
+ 
+ header {
+   margin: 0;
+   text-align: left;
+   background: var(--light_blue);
+   padding-top: 10px;
+   padding-bottom:10px;
+  
+   /*background-image: url("../images/ian-dooley-DuBNA1QMpPA-unsplash.jpg");*/
+  background-image: url("../images/OIP.jpg");
+  height: 80%;
+  background-position: center;
+  /*background-repeat: repeat;*/
+  /*background-size: contain;*/
+  background-size: cover;      
+ }
+ .blog_title {
+   padding-top: 20px;
+   padding-bottom: 20px;
+   width: 100%;
+   /*background: var(--light_blue);*/
+   /* color: var(--light_purple); */
+   -webkit-text-stroke-width: 0.5px;
+   -webkit-text-stroke-color: #141fc4;   
+   
+   text-align: center;
+   /* font-size: 3.0em; */
+   /* font-weight: 900; */
+   /*border: 5px blue;*/
+   /*border-radius: 10px 10px 10px 10px;*/ /* [top_left, top_right, lower_right, lower_left] */
+   /*box-shadow: 7px 7px 0px 0px red;*/ /* [horizontal_offset, vertical_offset, blur_radius, spread, color] */
+ }
+
+ #site-title {
+  font-family: 'Berkshire Swash', cursive;
+  font-size: 6rem;
+  font-weight: 900;
+  color: #092768;
+ }
+
+ .hike_logo{
+  height: 90px;
+  padding-left: 20px;
+ }
+ img {
+  float: left;
+ }
+ nav {
+   display: flex;
+   background-color: var(--dark_blue);
+ }
+ nav a {
+   font-size: 1.1em;
+   font-weight: bold;
+   color: var(--white);
+   padding: 14px 20px;
+   text-decoration: none;
+   text-align: center;
+ }
+ nav a:hover {
+   background-color: var(--light_purple);
+ }
+ 
+ .logout_button {
+   font-size: 1.1em;
+   font-weight: bold;
+   color: var(--white);
+   padding: 14px 20px;
+   text-decoration: none;
+   text-align: center;
+   background-color: var(--dark_blue);
+ }
+ .logout_button:hover{
+   background-color: var(--light_purple);
+ }
+ 
+ main {
+   flex: 1;
+   /*padding: 2% 10%;*/ /* I prefer explict method */
+   padding-top: 2%;
+   padding-bottom: 2%;
+   padding-left: 20px;
+   padding-right: 20px;
+   
+   background-color: var(--white);
+   /*
+   display: flex;
+   flex-wrap: wrap;
+   flex-grow: 1;
+   */
+ 
+ }
+ 
+ body {
+   font-family: Arial;
+   margin: 0;
+   display: flex;
+   flex-direction: column;
+   min-height: 100vh;
+   justify-content: flex-start;
+   /* background-color: var(--quatrinary); */
+   background: url("/images/travelblog_bg-2000.png")
+ }
+ 
+ /* .tech {
+  flex: 4;
+  background-color: #fff;
+  padding: 50px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+ } */
+ /* .each_tech{ */
+   /*display: flex;*/
+   /* flex-direction: column; */
+   /* justify-content: center; */
+   /* align-items: stretch; */
+   /*flex-wrap: wrap;*/
+   /* border: 1px solid var(--dark_blue); */
+   /* this is same as above
+   border-style: solid;
+   border-width: 1px;
+   border-color: var(--dark_blue);
+   */
+   /* padding: 0px; */
+   /* margin: 10px; */
+ 
+   /* margin-top: 1em;
+   margin-bottom: 1em;
+   max-width: 100%;
+   width: 30%;
+   height: 400px;
+
+   position: relative;
+   background-color: var(--light_blue);
+ }
+ .each_tech_title{ */
+   /* background-color: var(--light_purple); */
+   /*background-color: var(--light_purple);*/
+   /* text-align: left;
+   color: var(--black);
+   font-weight: bold;
+   padding: 5px;
+ } */
+ /* .each_tech_body{
+   background-color: var(--white);
+   padding: 10px;
+ }
+ .align_right {
+   padding: 5px;
+   text-align: right;
+   background-color: var(--white); */
+   /*float: right;*/
+ /* } */
+ 
+ a {
+   color: var(--dark);
+   text-decoration: none;
+ }
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ .login-card {
+   /* margin: 0 0 20px 0;
+   flex: 0 0 50%;
+   max-width: 30%;
+   padding: 5px;
+   border: 3px solid var(--dark_blue);
+   border-radius: var(--border-radius);
+   border-style: double;
+   border-width: thick;
+   background-color: var(--light_blue);
+   color: black;   */
+   margin: 0 0 20px 0;
+   flex: 0 0 50%;
+   max-width: 40%;
+   padding: 2rem;
+   border: 3px solid #232D3D;
+   border-radius: var(--border-radius);
+   /* border-style: double; */
+   /* border-width: thick; */
+   /* background-color: #1F3C40; */
+   /* color: #232D3D; */
+   font-weight: bolder;
+ }
+#login-btn, #register-btn {
+  background-color: #0f1e75 !important;
+}
+
+ .page-title {
+  font-size: 2rem;
+  text-align: center;
+ }
+ 
+ 
+  .tech {
+  flex: 4;
+  background-color: #fff;
+  padding: 50px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+ }
+
+ .card {
+   margin: 20px;
+   flex: 0 1 500px;
+   border: 7px double var(--dark);
+   border-radius: 10px;
+   background-color: var(--light);
+   color: var(--dark);
+ }
+ 
+ .card header {
+   color: var(--light);
+   font-weight: bold;
+   text-transform: uppercase;
+   margin: 0;
+   background-color: var(--tertiary);
+   padding: 0.625rem;
+   border-radius: calc(0.18rem - 1px) calc(0.18rem - 1px) 0 0;
+ }
+ 
+ .card-body {
+   font-size: 1.4rem;
+   text-align: center;
+   font-weight: bold;
+ }
+ .each_tech_title{
+  /*background-color: var(--light_purple);*/
+  text-align: left;
+  color: var(--black);
+  font-weight: bold;
+  padding: 0px;
+}
+
+.single-tech{
+  width: 70%;
+  display: flex;
+  /* padding-left: 30%; */
+  /* padding-right: 30%; */
+  flex-direction: column;
+  margin: auto;
+}
+/*
+.subtitle{
+  font-weight: bold;
+  font-size: 0.5em;
+  color: var(--dark_purple);
+}
+*/
+
+ .comment {
+   padding: 1%;
+   margin-bottom: 0.2%;
+   background-color: rgb(235, 89, 5);
+   /* margin: 20px; */
+   margin-left: 3%;
+   margin-right: 3%;
+ }
+ .comment .meta {
+   font-size: 90%;
+   margin-bottom: .5%;
+   opacity: .6;
+ }
+ 
+/* button {
+  background-color: #748C3F;
+ } */
+ #edit-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+ }
+
+ #btn-group {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  margin: 0.5rem;
+ }
+
+ #tech-data {
+  margin: 0.4rem;
+ }
+
+ #save-tech-btn {
+  margin-right: 0.6rem;
+ }
+
+ #edit-tech-btn {
+  margin-top: 0.4rem;
+ }
+
+ #create-tech-btn {
+  margin-top: 0.4rem;  
+  background-color:#3538d3 !important;
+
+ }
+ #main-login-btn {
+  background-color: #3538d3;
+  color: #fff;
+ }
+
+ #create-tech, #add-daily-form, #comment-btn {
+  background-color:#3538d3 !important;
+ }
+
+#cancel, #save-tech-btn, #logout {
+  background-color: #3F404A !important;
+}
+
+ #-add-daily-btn {
+  background-color: #3538d3 !important;
+ }
+
+ #delete-tech-btn {
+  background-color: #F15942;
+ }
+ /* #tech-cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+ } */
+ #tech-details {
+  /* background-color: #7B95A6; */
+  color: #181C3A;
+  font-size: 1rem;
+  text-align: center;
+  width: 90%;
+  margin-left: 5%;
+}
+
+ #main-heading {
+  font-size: 3.5rem;
+  text-align: center;
+ }
+
+ #daily-card {
+  width: 90%;
+ }
+
+ #daily-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+ }
+
+ #upload-p, #upload-a{
+  display: flex;
+  text-decoration: none;
+ }
+
+ #upload-p {
+  justify-content: flex-start;
+  align-items: flex-end;
+  margin-right: 1rem;
+ }
+
+ #upload-row {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  margin-left: .2rem;
+  font-family: 'Arial';
+  font-size: 1.2rem;
+ }
+
+ #dashboard-title {
+  text-align: center;
+ }
+
+ #upload-here-btn {
+  margin-top: 1rem;
+  /* margin-bottom: 1rem; */
+ }
+ 
+ #cancel {
+  margin-right: 0.5rem;
+  }
+
+ .separation {
+  margin-right: .5rem;
+ }
+
+ .container {
+  margin: 0 auto;
+ }
+
+ #comment-btn {
+  margin-top: 0.5rem;
+ }

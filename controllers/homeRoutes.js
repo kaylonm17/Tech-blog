@@ -1,11 +1,11 @@
 const router = require("express").Router();
 const sequelize = require("../config/connection");
-const { Tech, User, Comment } = require("../models/Index");
+const { Tech, User, Comment } = require("../models");
 
 // GET all techs for homepage
 router.get("/", async (req, res) => {
   try {
-    const dbtechData = await tech.findAll({
+    const dbtechData = await Tech.findAll({
 
       attributes: ["id", "location", "created_at", "tech_description"],
       include: [

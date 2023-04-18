@@ -32,7 +32,7 @@ User.hasMany(Comment, {
    foreignKey: 'user_id'
 });
  
-tech.hasMany(Comment, {
+Tech.hasMany(Comment, {
    foreignKey: 'tech_id'
 });
 
