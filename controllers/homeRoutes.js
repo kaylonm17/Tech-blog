@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const sequelize = require("../config/connection");
-const { Trip, User, Comment } = require("../models");
+const { Trip, User, Comment } = require("../models/Index");
 
 // GET all trips for homepage
 router.get("/", async (req, res) => {
