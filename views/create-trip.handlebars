@@ -1,0 +1,31 @@
+<section>
+  <!--<a href="/dashboard" class="is-pulled-right"> &larr; back to dashboard</a>-->
+  {{!-- <a href="/dashboard"><button class="button is-link is-pulled-right">Back to Dashboard</button></a> --}}
+  <h2 class="title">Create a new tech:</h2><hr>
+
+  <form class="new-tech-form">
+    <div>
+      <label for="tech-title">What is the title of your tech?</label>
+      <input class="input" type="text" id="tech-title" name="tech-title" placeholder="Add tech title"/>
+    </div>
+    <div>
+      <label for="location">Where are you going?</label>
+      <input type="textarea" id="location" name="location" placeholder="Add tech location"/>
+    </div>
+    <div>
+      <label for="starting-date">When do you leave for your tech?</label>
+      <input type="date" id="date" name="starting-date" placeholder="MM/DD/YYYY"/>
+    </div>
+     <div>
+      <label for="ending-date">When does your tech end?</label>
+      <input type="date" id="date" name="ending-date" placeholder="MM/DD/YYYY"/>
+    </div>
+    <div>
+      <label for="tech-description">Add a description for your tech:</label>
+      <input class="textarea" id="tech-description" name="tech-description" placeholder="Add a description of your tech"/>
+    </div>
+    <button type="submit" id="create-tech-btn" class="button is-link is-pulled-right">create tech</button>
+  </form>
+</section>
+
+<script src="/js/add-tech.js"></script>

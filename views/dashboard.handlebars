@@ -1,0 +1,16 @@
+    <!-- 
+      If a logged-in user has posts, show them.
+      If a logged-in user does not have a post, just show "create Post" button to create one.
+      --> 
+<div class="mb-5 pt-3">
+  <a href="/dashboard/create/"><button id="create-tech" class="button is-link is-pulled-right">create post</button></a>
+  <h2 id="dashboard-title" class="title pb-4">My Techs</h2><hr>
+{{#if techs.length}}
+  <div  class="tech">
+  {{#each techs as |tech|}}
+    {{> tech-info tech}}
+  </div> {{!-- Has to stay inside the loop --}}
+  {{/each}}
+{{else}}
+  <h6 class="pb-4 has-text-centered is-italic">You do not have any techs yet</h6>
+{{/if}}

@@ -1,0 +1,10 @@
+
+<!-- I will include "tech-info.handlebars" right away -->
+<div class="tech">
+  {{#each tech as |tech|}}
+    <a href="/login">
+      <!-- Insert: views/partials/tech-info.handlebars-->
+      {{> tech-info tech}}
+    </a>
+</div> <!-- this will close each tech's "div" -->
+{{/each}}

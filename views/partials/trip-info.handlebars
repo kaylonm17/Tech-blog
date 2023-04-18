@@ -1,0 +1,19 @@
+<div class="card">
+    <div class="card-image">
+        <figure class="image is-4by3">
+            <img src="{{get_random_image}}" alt="Photo Test">
+        </figure>
+    </div>
+    <div class="card-content">
+        <h2 class="each_tech_title">{{location}}</h2>
+        <div class="tech-description">
+           {{tech_description_trim tech_description}} 
+        </div>
+        <p class="subtitle is-6">Posted By: {{user.username}}</p>
+    </div>
+    <footer class="card-footer">
+        <a href="/tech/{{id}}" class="card-footer-item">Comment</a>
+        <a href="/api/tech-details/{{id}}" class="card-footer-item">View tech Details</a>
+        <a href="/dashboard/edit/{{id}}" class="card-footer-item">Edit tech</a>
+    </footer>
+{{!-- Adding a closing div breaks things --}}
